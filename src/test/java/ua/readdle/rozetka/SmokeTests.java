@@ -17,7 +17,7 @@ public class SmokeTests extends TestBase {
     }
 
     @Test(priority = 1)
-    public void simpleTest(){
+    public void searchProductByWord(){
         search();
         categoryPage.checkOpened();
         assertTrue(categoryPage.getDriver().getTitle().contains("Apple"));
