@@ -41,6 +41,7 @@
                     <filesets>
                         <fileset>
                             <directory>.logs</directory>
+                            <directory>src/main/logs</directory>
                         </fileset>
                     </filesets>
                 </configuration>

@@ -40,21 +40,24 @@ public class SmokeTests extends TestBase {
     }
 
     @Test(priority = 3)
-    public void addProductToCart() throws Exception{
+    public void addProductToCart() {
         search();
         categoryPage.checkOpened();
         categoryPage.addToBasketProduct(1);
-        String title = cartPopUp.title.getText();
-        assertEquals(title, "Вы добавили товар в корзину");
+        assertEquals(cartPopUp.title.getText(), " Вы добавили товар в корзину ");
         assertEquals(cartPopUp.activeProductsList.size(), 1);
         cartPopUp.close();
+
+    }
+
+    @Test(dependsOnMethods = "addProductToCart")
+    public void checkCartAferProductAding(){
         String productNumber = header.cartButtonNumber.getText();
         int expectedProductNumber = Integer.parseInt(productNumber);
         assertEquals(expectedProductNumber, 1);
         header.goToCart();
         String cartTtitle = cartPopUp.title.getText();
         assertEquals(cartTtitle, "Корзина");
-
     }
 
 
