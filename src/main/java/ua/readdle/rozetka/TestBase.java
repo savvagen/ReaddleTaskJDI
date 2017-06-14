@@ -8,11 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
+import ua.readdle.rozetka.listeners.TestListener;
+
 import static com.epam.jdi.uitests.core.settings.JDISettings.logger;
 
 
 
-
+//@Listeners(TestListener.class)
 public class TestBase extends TestNGBase {
 
     public static WebDriver driver;

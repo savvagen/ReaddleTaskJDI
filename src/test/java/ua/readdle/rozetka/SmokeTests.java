@@ -16,7 +16,7 @@ public class SmokeTests extends TestBase {
         homePage.shouldBeOpened();
     }
 
-    @Test
+    @Test(priority = 1)
     public void simpleTest(){
         search();
         categoryPage.checkOpened();
@@ -27,7 +27,7 @@ public class SmokeTests extends TestBase {
     }
 
 
-    @Test
+    @Test(priority = 2)
     public void openProductFromSearchResults(){
         search();
         categoryPage.checkOpened();
@@ -39,7 +39,7 @@ public class SmokeTests extends TestBase {
         assertTrue(productPage.prouctImages.isDisplayed());
     }
 
-    @Test
+    @Test(priority = 3)
     public void addProductToCart() throws Exception{
         search();
         categoryPage.checkOpened();

@@ -5,7 +5,6 @@ import com.epam.jdi.uitests.web.selenium.elements.base.Element;
 import com.epam.jdi.uitests.web.selenium.elements.common.Label;
 import com.epam.jdi.uitests.web.selenium.elements.complex.Elements;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
-import com.sun.org.glassfish.gmbal.DescriptorFields;
 import org.openqa.selenium.support.FindBy;
 import ua.readdle.rozetka.uiObjects.product.CharacterisictsSection;
 import ua.readdle.rozetka.uiObjects.product.DescriptionSection;
