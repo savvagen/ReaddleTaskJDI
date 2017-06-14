@@ -24,6 +24,8 @@ public class TestBase extends TestNGBase {
         logger.info("Run Tests");
     }
 
+
+
     @AfterMethod
     public void tearDown() {
         Verify.getFails();
