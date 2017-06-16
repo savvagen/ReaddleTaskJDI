@@ -1,9 +1,9 @@
 package ua.readdle.rozetka.pages;
 
 
-import com.epam.jdi.uitests.web.selenium.elements.base.Element;
 import com.epam.jdi.uitests.web.selenium.elements.common.Label;
 import com.epam.jdi.uitests.web.selenium.elements.complex.Elements;
+import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdi.uitests.web.selenium.elements.composite.WebPage;
 import org.openqa.selenium.support.FindBy;
 import ua.readdle.rozetka.uiObjects.product.CharacterisictsSection;
@@ -21,7 +21,7 @@ public class ProductPage extends WebPage {
     @FindBy(css = "section#comments_block div#comments article.pp-review-i") public List<ReviewSection> comments;
     @FindBy(css = "div.detail-img") public Elements<ProductImages> prouctImages;
 
-    @FindBy(id = "cart-popup") public Element cartPopUp;
+    @FindBy(id = "cart-popup") public Form cartPopUp;
 
 
 

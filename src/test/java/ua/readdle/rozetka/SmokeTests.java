@@ -1,13 +1,12 @@
 package ua.readdle.rozetka;
 
-import static ua.readdle.rozetka.JDIExampleSite.*;
-
 import com.epam.web.matcher.testng.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static com.epam.web.matcher.testng.Assert.*;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+import static ua.readdle.rozetka.JDIExampleSite.*;
 
 public class SmokeTests extends TestBase {
 
@@ -21,7 +20,7 @@ public class SmokeTests extends TestBase {
         search();
         categoryPage.checkOpened();
         assertTrue(categoryPage.getDriver().getTitle().contains("Apple"));
-        isFalse(categoryPage.productLists::isEmpty);
+        Assert.isFalse(categoryPage.productLists::isEmpty);
         assertTrue(categoryPage.producerDropdown.getWebElement("Apple").isDisplayed(),"filter \"Apple\" is not displayed");
         assertTrue(categoryPage.productLists.get(1).name.getText().contains("iPhone"), "Product with text \"iPhone\" is not displayed");
     }
@@ -34,7 +33,7 @@ public class SmokeTests extends TestBase {
         categoryPage.openProduct(1);
         assertTrue(productPage.productDetails.isDisplayed());
         assertTrue(productPage.productCharacteristics.isDisplayed());
-        assertFalse(productPage.productCharacteristics::isEmpty);
+        Assert.assertFalse(productPage.productCharacteristics::isEmpty);
         assertTrue(productPage.comments.size() > 0, "Comments are empty");
         assertTrue(productPage.prouctImages.isDisplayed());
     }
@@ -44,8 +43,8 @@ public class SmokeTests extends TestBase {
         search();
         categoryPage.checkOpened();
         categoryPage.addToBasketProduct(1);
-        assertEquals(cartPopUp.title.getText(), " Вы добавили товар в корзину ");
-        assertEquals(cartPopUp.activeProductsList.size(), 1);
+        String cartTitle = cartPopUp.title.getText();
+        assertEquals(cartPopUp.title.getText(), "Вы добавили товар в корзину");
         cartPopUp.close();
 
     }

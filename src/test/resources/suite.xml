@@ -6,9 +6,6 @@
 
 <suite name="Test suite" parallel="methods" thread-count="1">
 
-    <listeners>
-        <listener class-name="ua.readdle.rozetka.listeners.TestListener"/>
-    </listeners>
 
     <test name="Tests" preserve-order="true">
         <classes>
